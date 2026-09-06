@@ -167,10 +167,13 @@ Ensure:
 
 ```
 StayScoutPH/
-├── server.js                 # Express backend
+├── server.js                 # Express backend (local dev)
+├── api/
+│   └── index.js             # Vercel serverless handler
 ├── vite.config.js           # Vite configuration
 ├── package.json             # Dependencies
 ├── src/
+│   ├── server-core.js       # Shared API logic (Overpass + Express app)
 │   ├── main.jsx            # React entry point
 │   ├── App.jsx             # Root component
 │   ├── pages/
@@ -182,8 +185,6 @@ StayScoutPH/
 │   │   └── PropertyCard.jsx
 │   ├── hooks/
 │   │   └── useFetchPlaces.js
-│   ├── services/
-│   │   └── placesApi.js
 │   └── data/
 │       └── places.js       # Sample fallback data
 └── dist/                    # Production build (after npm run build)
